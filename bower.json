@@ -1,0 +1,26 @@
+{
+  "name": "px-kpi",
+  "version": "0.0.1",
+  "main": [
+    "px-kpi.html"
+  ],
+  "ignore": [
+    ".*",
+    "npm-debug.log",
+    "gulpfile.js",
+    "sass",
+    "bower_components",
+    "node_modules",
+    "test"
+  ],
+  "dependencies": {
+    "polymer": "^1.6.0",
+    "px-theme": "~0.8.0",
+    "px-headings-design": "~0.2.8",
+    "px-vis": "~0.1.20"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#~v1.1.6",
+    "px-starter-kit-design": "~0.5.5"
+  }
+}
