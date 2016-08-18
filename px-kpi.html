@@ -5,11 +5,8 @@
 -->
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="css/px-kpi-styles.html">
-<link rel="import" href="../px-vis/px-vis-behavior-common.html" />
-<link rel="import" href="../px-vis/px-vis-behavior-d3.html" />
-<link rel="import" href="../px-vis/px-vis-line.html"/>
-<link rel="import" href="../px-vis/px-vis-scale.html">
-<link rel="import" href="../px-vis/px-vis-svg.html"/>
+<link rel="import" href="../px-vis-spark/px-vis-spark.html" />
+
 
 <!--
 The px-kpi element is for displaying KPIs in a dashboard layout.
@@ -27,46 +24,20 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
 <dom-module id="px-kpi">
   <template>
     <style include="px-kpi-styles"></style>
-    <h3 id="title" class="caps u-mt0 u-mb">{{title}}</h3>
+    <h3 class="caps u-mt0 u-mb">{{title}}</h3>
     <div class="flex u-mb">
-      <h1 id="value" class="alpha float--left u-mv0 u-mr">{{value}}</h1>
+      <h1 class="alpha float--left u-mv0 u-mr">{{value}}</h1>
       <div class="flex flex--col u-pt- u-pb">
-        <i id="status" class$="fa fa-{{statusIcon}} flex__item" style$="color:{{statusColor}};"></i>
-        <span id="uom" class="flex--bottom epsilon">{{uom}}</span>
+        <div class="flex__item">
+          <i id="statusIcon" class$="fa fa-{{statusIcon}} flex__item" style$="color:{{statusColor}};"></i>
+          <span class="epsilon">{{statusLabel}}</span>
+        </div>
+        <span class="flex--bottom epsilon">{{uom}}</span>
       </div>
     </div>
-    <div class="flex">
-      <px-vis-svg
-        width="250"
-        height="40"
-        svg="{{svg}}"
-        px-svg-elem="{{pxSvgElem}}">
-      </px-vis-svg>
-      <px-vis-scale
-        x-axis-type="time"
-        y-axis-type="linear"
-        complete-series-config="[[_seriesConfig]]"
-        chart-extents="{{_extents}}"
-        width="250"
-        height="40"
-        chart-data="{{sparkLineData}}"
-        x="{{x}}"
-        y="{{y}}"
-        current-domain-x="{{currentDomainX}}"
-        current-domain-y="{{currentDomainY}}"
-        selected-domain="[[selectedDomain]]">
-      </px-vis-scale>
-      <px-vis-line
-        svg="[[svg]]"
-        series-id="mySeries"
-        chart-data="[[sparkLineData]]"
-        complete-series-config="[[_seriesConfig]]"
-        x="[[x]]"
-        y="[[y]]"
-        current-domain-x="[[currentDomainX]]"
-        current-domain-y="[[currentDomainY]]">
-      </px-vis-line>
-    </div>
+    <template is="dom-if" if="{{sparkLineData}}">
+      <px-vis-spark type="line" width="300" height="50" prevent-resize="true" spark-line-data="{{sparkLineData}}"></px-vis-spark>
+    </template>
   </template>
 </dom-module>
 
@@ -83,8 +54,7 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type String
        */
       title: {
-        type: String,
-        value: ""
+        type: String
       },
       /**
        * Value of KPI.
@@ -93,8 +63,7 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type String
        */
       value: {
-        type: Number,
-        value: 0
+        type: String
       },
       /**
        * Unit of Measure for KPI (e.g. %, USD, etc).
@@ -103,8 +72,7 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type String
        */
       uom: {
-        type: String,
-        value: "%"
+        type: String
       },
       /**
        * Color to display the status icon.
@@ -113,8 +81,7 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type String
        */
       statusColor: {
-        type: String,
-        value: "green"
+        type: String
       },
       /**
        * Icon to display for the status. See Font Awesome documentation for valid names.
@@ -123,8 +90,16 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type String
        */
       statusIcon: {
-        type: String,
-        value: "circle"
+        type: String
+      },
+      /**
+       * Supporting text to display next to the status icon (e.g. if the icon is an arrow, "12%" to indicate an increase).
+       *
+       * @property statusLabel
+       * @type String
+       */
+      statusLabel: {
+        type: String
       },
       /**
        * The spark line data to display below the KPI. See px-vis and px-vis-line for more information.
@@ -133,72 +108,8 @@ The px-kpi element is for displaying KPIs in a dashboard layout.
        * @type Array
        */
       sparkLineData: {
-        type: Array,
-        value: [{
-            'x': 1397102460000,
-            'y': 0.56
-          },{
-            'x': 1397139660000,
-            'y': 0.4
-          },{
-            'x': 1397177400000,
-            'y': 0.43
-          },{
-            'x': 1397228040000,
-            'y': 0.33
-          },{
-            'x': 1397248260000,
-            'y': 0.47
-          },{
-            'x': 1397291280000,
-            'y': 0.41
-          },{
-            'x': 1397318100000,
-            'y': 0.26
-          },{
-            'x': 1397342100000,
-            'y': 0.42
-          },{
-            'x': 1397390820000,
-            'y': 0.27
-          },{
-            'x': 1397408100000,
-            'y': 0.38
-          },{
-            'x': 1397458800000,
-            'y': 0.36
-          },{
-            'x': 1397522940000,
-            'y': 0.32
-        }]
-      },
-      _seriesConfig: {
-        type: Object,
-        value: {
-          'mySeries': {
-            "name":"My-Series",
-            "type": "line",
-            "x": 'x',
-            "y": 'y',
-            'color': 'rgb(93,165,218)'
-          }
-        }
-      },
-      _extents: {
-        type: Object,
-        value: {
-          "x": [Infinity,-Infinity],
-          "y": [0,-Infinity]
-        }
+        type: Array
       }
-    },
-
-    /**
-     * Method
-     *
-     * @method
-     */
-    method: function() {
     }
 
   });

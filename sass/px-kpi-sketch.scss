@@ -37,6 +37,12 @@ Predix branding rules go in px-kpi-predix.scss, not in this file.
 
 
 // Component
+#statusIcon {
+  font-size: 1.4rem;
+}
+h1 {
+  font-weight: normal;
+}
 
 // Trumps
 // @import "inuit-clearfix/_trumps.clearfix.scss";
