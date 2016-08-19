@@ -9,14 +9,14 @@
  */
 
 //
-// Sass for the "sketch" notion of the px-progress-bar component
+// Sass for the "sketch" notion of the px- component
 //
 // @author
 //
 
 /*
 THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
-Predix branding rules go in px-progress-bar.scss, not in this file.
+Predix branding rules go in px-.scss, not in this file.
 */
 
 //Settings
@@ -56,9 +56,11 @@ $inuit-enable-list-inline--delimited : true;
   background: $gray1;
   width: 100%;
 }
+
 .description-text{
   max-width: calculateRem(700px);
 }
+
 .properties{
   flex: 0 0 calculateRem(250px);
   background: $white;
@@ -67,10 +69,12 @@ $inuit-enable-list-inline--delimited : true;
   overflow-y: auto;
   margin-right: calculateRem(20px);
 }
+
 .demoContainer {
   flex: 1 1 auto;
   overflow: auto;
 }
+
 .demoSnippet {
   flex-basis: calculateRem(150px);
 }

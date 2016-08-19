@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>px-kpi Demo</title>
+  <title>px-kpi-list Demo</title>
   <link rel="stylesheet" type="text/css" href="css/px-kpi-demo.css"/>
   <!-- Import custom element. Note: see comment about relative paths to dependencies in the *.html file referenced below -->
   <script src="../webcomponentsjs/webcomponents-lite.js"></script>
   <link rel="import" href="../px-theme/px-theme.html"/>
   <link rel="import" href="../px-api-viewer/px-api-viewer.html" />
   <link rel="import" href="../px-tabs/px-tab-set.html" />
-  <link rel="import" href="px-kpi.html"/>
+  <link rel="import" href="px-kpi-list.html"/>
   <link rel="icon" href="favicon.ico" type="image/x-icon"/>
   <link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
   <link rel="import" href="../px-demo-snippet/px-demo-snippet.html">
@@ -27,10 +27,10 @@
     <!-- discription -->
     <div class="hero u-p++ text--shadow">
       <a class="actionable flex flex--right flex--middle" href="https://github.com/PredixDev/px-kpi" target="_blank"><iron-icon class="menu__open" icon="fa:fa-github"></iron-icon>View on Github</a>
-  		<h1 class="delta">px-kpi</h1>
+  		<h1 class="delta">px-kpi-list</h1>
       <div class="description-text">
     		<p>
-          The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value.
+          The px-kpi-list element is for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
         </p>
         <p>
           You can also click <a href="demo.html" target="_blank">here</a> to see a demo of this component working inside of a 6-up px-card.
@@ -60,11 +60,10 @@
               <div class="properties u-ph+ u-pb+ u-mt+">
                 <p class="epsilon">Properties</p>
                 <div class="u-mb-">Title: <input id="title{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.title}}" value="{{item.title::input}}" /></div>
-                <div class="u-mb-">Value: <input id="value{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.value}}" value="{{item.value::input}}" /></div>
-                <div class="u-mb-">Unit of Measure: <input id="uom{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.uom}}" value="{{item.uom::input}}" /></div>
                 <div class="u-mb-">Status Icon: <input id="statusIcon{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.statusIcon}}" value="{{item.statusIcon::input}}" /></div>
                 <div class="u-mb-">Status Color: <input id="statusColor{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.statusColor}}" value="{{item.statusColor::input}}" /></div>
                 <div class="u-mb-">Status Label: <input id="statusLabel{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.statusLabel}}" value="{{item.statusLabel::input}}" /></div>
+                <div class="u-mb-">Footer: <input id="footer{{indexPlusOne(index)}}" class="text-input" type="text" placeholder="{{item.footer}}" value="{{item.footer::input}}" /></div>
               </div>
 
               <div class="demoContainer u-mt+">
@@ -72,20 +71,19 @@
                 <div class="flex flex--col">
                   <div class="demo u-p+">
 
-                    <px-kpi
+                    <px-kpi-list
                       title="{{item.title}}"
-                      value="{{item.value}}"
-                      uom="{{item.uom}}"
+                      values="{{values}}"
                       status-icon="{{item.statusIcon}}"
                       status-label="{{item.statusLabel}}"
                       status-color="{{item.statusColor}}"
-                      spark-line-data="{{sparkLineData}}">
-                    </px-kpi>
+                      footer="{{item.footer}}">
+                    </px-kpi-list>
                   </div>
                   <div>
                     <px-demo-snippet
                       element-properties={{item}}
-                      element-name="px-kpi">
+                      element-name="px-kpi-list">
                     </px-demo-snippet>
                   </div>
                 </div>
@@ -99,15 +97,14 @@
                     <div class="componentHeader">Associated Components</div>
                     <div class="componentList">
                       <ul>
-                        <li><a href="http://predixdev.github.io/px-kpi/px-kpi/px-kpi-list.html">px-kpi-list</a></li>
-                        <li><a href="https://predixdev.github.io/px-vis-spark/px-vis-spark/index.html">px-vis-spark</a></li>
+                        <li><a href="http://predixdev.github.io/px-kpi/px-kpi/index.html">px-kpi</a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
               <div>
-                <px-api-viewer source="px-kpi"></px-api-viewer>
+                <px-api-viewer source="px-kpi-list"></px-api-viewer>
               </div>
             </div>
           </div>
@@ -139,61 +136,43 @@
 <script>
 window.addEventListener('WebComponentsReady', function() {
   var template = document.querySelector('template[is=dom-bind]'),
-      sparkLineData = [{
-          'x': 1397102460000,
-          'y': 0.56
+      values = [{
+          'label': 'Availability',
+          'value': '99',
+          'uom': '%'
         },{
-          'x': 1397139660000,
-          'y': 0.4
+          'label': 'Reliability',
+          'value': '92.5',
+          'uom': '%'
         },{
-          'x': 1397177400000,
-          'y': 0.43
+          'label': 'Starts',
+          'value': '5',
+          'uom': ''
         },{
-          'x': 1397228040000,
-          'y': 0.33
+          'label': 'Fired',
+          'value': '2794',
+          'uom': 'hrs'
         },{
-          'x': 1397248260000,
-          'y': 0.47
-        },{
-          'x': 1397291280000,
-          'y': 0.41
-        },{
-          'x': 1397318100000,
-          'y': 0.26
-        },{
-          'x': 1397342100000,
-          'y': 0.42
-        },{
-          'x': 1397390820000,
-          'y': 0.27
-        },{
-          'x': 1397408100000,
-          'y': 0.38
-        },{
-          'x': 1397458800000,
-          'y': 0.36
-        },{
-          'x': 1397522940000,
-          'y': 0.32
-      }],
+          'label': 'MTBT',
+          'value': '97',
+          'uom': 'days'
+        }],
       optionsArray = [
         {
-          "title":"Orders",
-          "value":"30M",
-          "uom":"USD",
+          "title":"Asset 123456",
+          "values":"[{...}]",
           "statusIcon":"arrow-up",
           "statusLabel":"12%",
           "statusColor":"green",
-          "sparkLineData":"[{...}]"
+          "footer":"Last 30 days"
         },
         {
-          "title":"Inventory",
-          "value":"10.4",
-          "uom":"days",
-          "statusIcon":"calendar",
+          "title":"Asset 123456",
+          "values":"[{...}]",
+          "statusIcon":"circle",
           "statusLabel":"",
-          "statusColor":"red",
-          "sparkLineData":"[{...}]"
+          "statusColor":"orange",
+          "footer":"Last 7 days"
         }
       ],
       indexPlusOne = function(num) {
@@ -204,7 +183,7 @@ window.addEventListener('WebComponentsReady', function() {
   template.selected = "0";
   template.optionsArray = optionsArray;
   template.indexPlusOne = indexPlusOne;
-  template.sparkLineData = sparkLineData;
+  template.values = values;
 });
 </script>
 

@@ -1,0 +1,116 @@
+<!--
+    Relative paths assume component is being run from inside an app or another component, where dependencies are flat
+    siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
+    'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
+-->
+<link rel="import" href="../polymer/polymer.html"/>
+<link rel="import" href="css/px-kpi-styles.html">
+
+
+<!--
+The px-kpi-list element is for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
+
+##### Usage
+
+    <px-kpi-list title="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
+
+@element px-kpi-list
+@blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
+@homepage index.html
+@demo demo.html
+-->
+
+<dom-module id="px-kpi-list">
+  <template>
+    <style include="px-kpi-styles"></style>
+    <div class="flex flex--row flex--middle u-mv--">
+      <div class="flex flex--left flex__item">
+        <h3 class="caps u-mv0">{{title}}</h3>
+      </div>
+      <div class="flex flex--right flex__item">
+        <i id="statusIcon" class$="fa fa-{{statusIcon}} u-mr--" style$="color:{{statusColor}};"></i>
+        <span class="epsilon u-mt--">{{statusLabel}}</span>
+      </div>
+    </div>
+    <ul id="kpiList" class="list-ui u-mb--">
+      <template is="dom-repeat" items="{{values}}">
+        <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv--">
+          <div class="flex flex--left flex__item">
+            <span id="listLabel">{{item.label}}</span>
+          </div>
+          <div class="flex flex--right flex--bottom flex__item">
+            <span class="delta">{{item.value}}</span>
+            <span class="caps u-mb-- u-ml--">{{item.uom}}</span>
+          </div>
+        </li>
+      </template>
+    </ul>
+    <span id="listFooter" class="zeta">{{footer}}</span>
+  </template>
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'px-kpi-list',
+
+    properties: {
+      /**
+       * Title of KPI.
+       *
+       * @property title
+       * @type String
+       */
+      title: {
+        type: String
+      },
+      /**
+       * A JSON array with one or more value objects. Each object should have a key-value pair for the KPI label, value, and unit of measure.
+       * E.g. [{"label":"Availability","value":"99","uom":"%"},...]
+       *
+       * @property values
+       * @type Array
+       */
+      values: {
+        type: Array
+      },
+      /**
+       * Color to display the status icon.
+       *
+       * @property statusColor
+       * @type String
+       */
+      statusColor: {
+        type: String
+      },
+      /**
+       * Icon to display for the status. See Font Awesome documentation for valid names.
+       *
+       * @property statusIcon
+       * @type String
+       */
+      statusIcon: {
+        type: String
+      },
+      /**
+       * Supporting text to display next to the status icon (e.g. if the icon is an arrow, "12%" to indicate an increase).
+       *
+       * @property statusLabel
+       * @type String
+       */
+      statusLabel: {
+        type: String
+      },
+      /**
+       * The footer string to display below the KPI list.
+       *
+       * @property footer
+       * @type String
+       */
+      footer: {
+        type: String
+      }
+    }
+
+  });
+</script>

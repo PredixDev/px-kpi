@@ -37,11 +37,30 @@ Predix branding rules go in px-kpi-predix.scss, not in this file.
 
 
 // Component
+@import "px-list-ui-design/_objects.list-ui.scss";
+
 #statusIcon {
   font-size: 1.4rem;
 }
 h1 {
   font-weight: normal;
+}
+#listLabel, #listFooter {
+  color: $gray6;
+}
+#kpiList {
+  border-top: none;
+}
+#kpiList li {
+  border-color: $gray3;
+}
+#kpiList li:first-child {
+  border-top-color: $gray5;
+  border-top-width: 0.15rem;
+}
+#kpiList li:nth-last-child(2) {
+  border-bottom-color: $gray5;
+  border-bottom-width: 0.15rem;
 }
 
 // Trumps
@@ -52,7 +71,11 @@ h1 {
 // @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
 $inuit-enable-margins: true;
 $inuit-enable-margins--none: true;
+$inuit-enable-margins--tiny: true;
+$inuit-enable-margins--small: true;
 $inuit-enable-paddings: true;
+$inuit-enable-paddings--tiny: true;
 $inuit-enable-paddings--small: true;
+$inuit-enable-paddings--none: true;
 @import "px-spacing-design/_trumps.spacing.scss";
 @import "px-widths-design/_trumps.widths.scss";

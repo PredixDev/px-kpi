@@ -1,8 +1,8 @@
-#Px-Kpi
+#px-kpi
 
 ## Overview
 
-Px-Kpi is a Predix UI component
+The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value, or as a short list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
 
 ## Usage
 
@@ -19,19 +19,23 @@ Node, npm and bower are necessary to install the component and dependencies. web
 First, install the component via bower on the command line.
 
 ```
-bower install Px-Kpi --save
+bower install px-kpi --save
 ```
 
 Second, import the component to your application with the following tag in your head.
 
 ```
-<link rel="import" href="/bower_components/Px-Kpi/Px-Kpi.html"/>
+<link rel="import" href="/bower_components/px-kpi/px-kpi.html"/>
+// and/or:
+<link rel="import" href="/bower_components/px-kpi/px-kpi-list.html"/>
 ```
 
 Finally, use the component in your application:
 
 ```
-Insert Your demo code here.
+<px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkLineData="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
+// and/or:
+<px-kpi-list title="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 ```
 
 <br />
@@ -39,7 +43,7 @@ Insert Your demo code here.
 
 ## documentation
 
-Read the full API and view the demo [here](https://predixdev.github.io/Px-Kpi).
+Read the full API and view the demo [here](https://predixdev.github.io/px-kpi).
 
 The documentation in this repository is supplemental to the official Predix documentation, which is continuously updated and maintained by the Predix documentation team. Go to [http://predix.io](http://predix.io)  to see the official Predix documentation.
 
@@ -70,4 +74,4 @@ Navigate to the root of that server (e.g. http://localhost:8080/) in a browser t
 
 ## Known Issues
 
-Please use [Github Issues](https://github.com/PredixDev/Px-Kpi/issues) to submit any bugs you might find.
+Please use [Github Issues](https://github.com/PredixDev/px-kpi/issues) to submit any bugs you might find.
