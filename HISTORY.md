@@ -1,3 +1,7 @@
+v0.0.4
+==================
+* Updated with new spark types
+
 v0.0.3
 ==================
 * Added px-kpi-list component

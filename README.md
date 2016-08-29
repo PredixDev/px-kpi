@@ -33,7 +33,7 @@ Second, import the component to your application with the following tag in your 
 Finally, use the component in your application:
 
 ```
-<px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkLineData="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
+<px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkType="line" sparkData="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
 // and/or:
 <px-kpi-list title="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 ```
@@ -41,7 +41,7 @@ Finally, use the component in your application:
 <br />
 <hr />
 
-## documentation
+## Documentation
 
 Read the full API and view the demo [here](https://predixdev.github.io/px-kpi).
 
@@ -64,7 +64,9 @@ From the component's directory, to start a local server run:
 $ gulp serve
 ```
 
-Navigate to the root of that server (e.g. http://localhost:8080/) in a browser to open the API documentation page, with link to the "Demo" / working examples.
+The root of that server (e.g. http://localhost:8080/) will automatically open in your default browser with the API documentation page and interactive working examples.
+
+`gulp serve` also runs `gulp watch` concurrently so that when you make a change to your source files and save them, your preview will be updated in any browsers you have opened and turned on in LiveReload.
 
 ### GE Coding Style Guide
 [GE JS Developer's Guide](https://github.com/GeneralElectric/javascript)
