@@ -1,3 +1,7 @@
+v0.0.5
+==================
+* Adding auto-ghp
+
 v0.0.4
 ==================
 * Updated with new spark types
