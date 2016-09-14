@@ -1,8 +1,11 @@
-#px-kpi
+px-kpi [![Build Status](https://travis-ci.org/PredixDev/px-kpi.svg?branch=master)](https://travis-ci.org/PredixDev/px-kpi)
+-----------------------------------------------
+
+[![px-kpi demo](px-kpi.png?raw=true)](https://github.com/PredixDev/px-kpi)
 
 ## Overview
 
-The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value, or as a short list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
+The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number or value, with an optional spark line/bar, or as a short px-kpi-list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
 
 ## Usage
 
@@ -33,7 +36,7 @@ Second, import the component to your application with the following tag in your 
 Finally, use the component in your application:
 
 ```
-<px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkType="line" sparkData="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
+<px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" spark-type="line" spark-data="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
 // and/or:
 <px-kpi-list title="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 ```
