@@ -1,3 +1,7 @@
+v0.1.2
+==================
+* Updated dependencies
+
 v0.1.1
 ==================
 * Added unit tests
