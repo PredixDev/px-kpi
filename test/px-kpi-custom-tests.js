@@ -27,7 +27,9 @@ function runCustomTests() {
     test('Spark chart is proper size', function() {
       var chart = document.querySelector('px-simple-win-loss-chart'),
           width = window.getComputedStyle(chart).width;
-      assert.equal(width, '300px');
+      flush(function(){
+        assert.equal(width, '300px');
+      });
     });
   });
-};
+}
