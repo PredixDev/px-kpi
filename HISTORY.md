@@ -1,6 +1,10 @@
+v0.1.3
+==================
+* updated dependencies
+
 v0.1.2
 ==================
-* Updated dependencies
+* updated dependencies
 
 v0.1.1
 ==================
