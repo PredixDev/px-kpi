@@ -1,3 +1,7 @@
+v0.1.4
+==================
+* added vis polygit imports to demosnippet
+
 v0.1.3
 ==================
 * updated dependencies

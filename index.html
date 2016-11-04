@@ -93,7 +93,9 @@
                   <div>
                     <px-demo-snippet
                       element-properties={{item}}
-                      element-name="px-kpi">
+                      element-name="px-kpi"
+                      links-includes="[[linksIncludes]]"
+                      >
                     </px-demo-snippet>
                   </div>
                 </div>
@@ -228,6 +230,9 @@ window.addEventListener('WebComponentsReady', function() {
   template.indexPlusOne = indexPlusOne;
   template.sparkData1 = sparkData1;
   template.sparkData2 = sparkData2;
+
+  template.linksIncludes = ['px-vis/px-polygit-imports-vis.html', 'px-datetime-common/px-polygit-imports-datetime.html'];
+
 });
 </script>
 
