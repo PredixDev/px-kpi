@@ -14,6 +14,15 @@ The px-kpi-list element is for displaying KPIs in a dashboard layout as a short 
 
     <px-kpi-list title="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 
+### Styling
+The following custom properties are available for styling:
+
+Custom property | Description | Default
+----------------|-------------|----------
+`--px-kpi-text-color` | Text color | `$black`
+`--px-kpi-secondary-text-color` | Secondary/muted text color | `$gray6`
+`--px-kpi-border-color` | Border color | `$gray5`
+
 @element px-kpi-list
 @blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
 @homepage index.html

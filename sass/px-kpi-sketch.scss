@@ -39,6 +39,10 @@ Predix branding rules go in px-kpi-predix.scss, not in this file.
 // Component
 @import "px-list-ui-design/_objects.list-ui.scss";
 
+:host {
+  color: var(--px-kpi-text-color, $black);
+}
+
 #statusIcon {
   font-size: 1.4rem;
 }
@@ -46,20 +50,20 @@ h1 {
   font-weight: normal;
 }
 #listLabel, #listFooter {
-  color: $gray6;
+  color: var(--px-kpi-secondary-text-color, $gray6);
 }
 #kpiList {
   border-top: none;
 }
 #kpiList li {
-  border-color: $gray3;
+  border-color: var(--px-kpi-border-color, $gray5);
 }
 #kpiList li:first-child {
-  border-top-color: $gray5;
+  border-top-color: var(--px-kpi-border-color, $gray5);
   border-top-width: 0.15rem;
 }
 #kpiList li:nth-last-child(2) {
-  border-bottom-color: $gray5;
+  border-bottom-color: var(--px-kpi-border-color, $gray5);
   border-bottom-width: 0.15rem;
 }
 

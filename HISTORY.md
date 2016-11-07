@@ -1,3 +1,7 @@
+v0.1.5
+==================
+* added style variables for theming
+
 v0.1.4
 ==================
 * added vis polygit imports to demosnippet
