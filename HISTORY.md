@@ -1,7 +1,10 @@
+v0.1.8
+==================
+* fixed font-awesome icon by switching to px-polymer-font-awesome
+
 v0.1.7
 ==================
 * removing px-theme style call
-
 
 v0.1.6
 ==================

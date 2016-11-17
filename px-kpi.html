@@ -6,6 +6,7 @@
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="css/px-kpi-styles.html">
 <link rel="import" href="../px-vis-spark/px-vis-spark.html" />
+<link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
 
 
 <!--
@@ -31,13 +32,13 @@ Custom property | Description | Default
 <dom-module id="px-kpi">
   <template>
     <style include="px-kpi-styles"></style>
-    
+
     <h3 class="caps u-mt0 u-mb">{{title}}</h3>
     <div class="flex u-mb">
       <h1 class="alpha float--left u-mv0 u-mr">{{value}}</h1>
       <div class="flex flex--col u-pt- u-pb">
         <div class="flex__item">
-          <i id="statusIcon" class$="fa fa-{{statusIcon}} flex__item" style$="color:{{statusColor}};"></i>
+          <iron-icon id="statusIcon" icon$="fa:fa-{{statusIcon}}" class="flex__item" style$="color:{{statusColor}};"></iron-icon>
           <span class="epsilon">{{statusLabel}}</span>
         </div>
         <span class="flex--bottom epsilon">{{uom}}</span>
