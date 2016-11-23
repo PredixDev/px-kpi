@@ -1,3 +1,7 @@
+v0.1.9
+==================
+* Update px-theme to 2.0.1 and update test fixtures
+
 v0.1.8
 ==================
 * fixed font-awesome icon by switching to px-polymer-font-awesome

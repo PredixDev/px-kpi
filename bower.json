@@ -1,6 +1,6 @@
 {
     "name": "px-kpi",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "main": [
         "px-kpi.html"
     ],
@@ -15,7 +15,7 @@
     ],
     "dependencies": {
         "polymer": "^1.6.1",
-        "px-theme": "~1.1.2",
+        "px-theme": "^2.0.1",
         "px-headings-design": "^0.2.8",
         "px-list-ui-design": "^0.3.11",
         "px-vis-spark": "~0.1.0",
