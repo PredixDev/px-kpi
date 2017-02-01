@@ -1,3 +1,7 @@
+v0.2.4
+==================
+* removed 'rm *.pdf' from ghp.sh for travis 
+
 v0.2.3
 ==================
 * Updating so px-demo-snippet and px-api-viewer get new grays 
