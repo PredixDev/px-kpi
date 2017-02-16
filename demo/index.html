@@ -1,0 +1,179 @@
+<!-- Common imports -->
+<link rel="import" href="../../polymer/polymer.html" />
+<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
+
+<!-- Common demo imports -->
+<link rel="import" href="../../px-demo/px-demo-header.html" />
+<link rel="import" href="../../px-demo/px-demo-api-viewer.html" />
+<link rel="import" href="../../px-demo/px-demo-footer.html" />
+<link rel="import" href="../../px-demo/px-demo-configs.html" />
+<link rel="import" href="../../px-demo/px-demo-props.html" />
+<link rel="import" href="../../px-demo/px-demo-interactive.html" />
+<link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
+
+<!-- Imports for this component -->
+<link rel="import" href="../../px-demo/css/px-demo-styles.html" />
+<link rel="import" href="../px-kpi.html" />
+
+<!-- Demo DOM module -->
+<dom-module id="local-element-demo">
+  <template>
+    <style include="px-demo-styles" is="custom-style"></style>
+
+    <!-- Header -->
+    <px-demo-header
+        module-name="px-kpi"
+        description="The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value.">
+    </px-demo-header>
+
+    <!-- Interactive -->
+    <px-demo-interactive>
+      <!-- Configs -->
+      <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+
+      <!-- Props -->
+      <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+
+      <!-- Component ---------------------------------------------------------->
+      <px-demo-component>
+        <px-kpi
+            title="{{props.title.value}}"
+            value="{{props.value.value}}"
+            uom="{{props.uom.value}}"
+            status-icon="{{props.statusIcon.value}}"
+            status-label="{{props.statusLabel.value}}"
+            status-color="{{props.statusColor.value}}"
+            spark-type="{{props.sparkType.value}}"
+            spark-data="{{props.sparkData.value}}">
+        </px-kpi>
+      </px-demo-component>
+      <!-- END Component ------------------------------------------------------>
+
+      <px-demo-component-snippet
+          element-properties="{{props}}"
+          element-name="px-kpi">
+      </px-demo-component-snippet>
+    </px-demo-interactive>
+
+    <!-- API Viewer -->
+    <px-demo-api-viewer source="px-kpi"></px-demo-api-viewer>
+
+    <!-- Footer -->
+    <px-demo-footer></px-demo-footer>
+
+  </template>
+
+</dom-module>
+<script>
+  Polymer({
+    is: 'local-element-demo',
+
+    properties: {
+
+      /**
+       * @property demoProps
+       * @type {Object}
+       */
+      props: {
+        type: Object,
+        value: function(){ return this.demoProps; }
+      },
+
+      /**
+       * An array of pre-configured `props` that can be used to provide the user
+       * with a set of common examples. These configs will be made available
+       * as a set of tabs the user can click that will automatically change
+       * the `props` to specific values.
+       *
+       * @property demoProps
+       * @type {Array}
+       */
+      configs: {
+        type: Array,
+        value: function(){
+          return [
+            { configName: "Line",
+              configReset: true,
+              title: "Orders",
+              value: "30M",
+              uom: "USD",
+              statusIcon: "arrow-up",
+              statusColor: "green",
+              statusLabel: "12%",
+              sparkType: "line",
+            },
+
+            { configName: "Bar",
+              configReset: true,
+              title: "Inventory",
+              value: "10.4",
+              uom: "days",
+              statusIcon: "calendar",
+              statusColor: "red",
+              statusLabel: "",
+              sparkType: "bar"
+            },
+
+            { configName: "Win/Loss",
+              configReset: true,
+              title: "Win/Loss",
+              value: "+10%",
+              uom: "",
+              statusIcon: "circle",
+              statusColor: "green",
+              statusLabel: "Win",
+              sparkType: "winLoss"
+            },
+
+            { configName: "Show months",
+              displayMode: this.demoProps.displayMode.inputChoices[1],
+              preventRangeSelection: false,
+              blockFutureDates: false,
+              blockPastDates: false,
+              blockDatesBefore: '',
+              blockDatesAfter: '',
+              hideNextButton: false,
+              hidePreviousButton: false,
+              parentComponent: ["<div style='width:250px'>", "</div>"] }
+          ]
+        }
+      }
+    },
+
+    /**
+     * A reference for `this.props`. Read the documentation there.
+     */
+    demoProps: {
+      title: {
+        type: String,
+        inputType: 'text'
+      },
+      value: {
+        type: String,
+        inputType: 'text'
+      },
+      uom: {
+        type: String,
+        inputType: 'text'
+      },
+      statusIcon: {
+        type: String,
+        inputType: 'text',
+        inputPlaceholder: 'Font Awesome icon'
+      },
+      statusLabel: {
+        type: String,
+        inputType: 'text'
+      },
+      statusColor: {
+        type: String,
+        inputType: 'text'
+      },
+      sparkType: {
+        type: String,
+        inputType: 'text'
+      }
+    }
+
+  });
+</script>
