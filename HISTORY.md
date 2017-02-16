@@ -1,10 +1,14 @@
+v0.2.5
+==================
+* update demo page using px-demo
+
 v0.2.4
 ==================
-* removed 'rm *.pdf' from ghp.sh for travis 
+* removed `*.pdf` from ghp.sh for travis
 
 v0.2.3
 ==================
-* Updating so px-demo-snippet and px-api-viewer get new grays 
+* Updating so px-demo-snippet and px-api-viewer get new grays
 
 v0.2.2
 ==================

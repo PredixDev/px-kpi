@@ -51,7 +51,9 @@
 
       <px-demo-component-snippet
           element-properties="{{props}}"
-          element-name="px-kpi">
+          element-name="px-kpi"
+          links-includes="[[linksIncludes]]"
+          scripts-includes="[[scriptsIncludes]]">
       </px-demo-component-snippet>
     </px-demo-interactive>
 
@@ -79,6 +81,16 @@
         value: function(){ return this.demoProps; }
       },
 
+      linksIncludes: {
+        type: Array,
+        value: ['px-vis/px-polygit-imports-vis.html', 'px-datetime-common/px-polygit-imports-datetime.html']
+      },
+
+      scriptsIncludes: {
+        type: Array,
+        value: ['https://d3js.org/d3.v3.min.js']
+      },
+
       /**
        * An array of pre-configured `props` that can be used to provide the user
        * with a set of common examples. These configs will be made available
@@ -94,15 +106,45 @@
           return [
             { configName: "Line",
               configReset: true,
-              title: "Orders",
-              value: "30M",
-              uom: "USD",
-              statusIcon: "arrow-up",
-              statusColor: "green",
-              statusLabel: "12%",
-              sparkType: "line",
+              sparkData: [
+                {
+                  'x': 1397102460000,
+                  'y': 0.56
+                },{
+                  'x': 1397139660000,
+                  'y': 0.4
+                },{
+                  'x': 1397177400000,
+                  'y': 0.43
+                },{
+                  'x': 1397228040000,
+                  'y': 0.33
+                },{
+                  'x': 1397248260000,
+                  'y': 0.47
+                },{
+                  'x': 1397291280000,
+                  'y': 0.41
+                },{
+                  'x': 1397318100000,
+                  'y': 0.26
+                },{
+                  'x': 1397342100000,
+                  'y': 0.42
+                },{
+                  'x': 1397390820000,
+                  'y': 0.27
+                },{
+                  'x': 1397408100000,
+                  'y': 0.38
+                },{
+                  'x': 1397458800000,
+                  'y': 0.36
+                },{
+                  'x': 1397522940000,
+                  'y': 0.32
+                }]
             },
-
             { configName: "Bar",
               configReset: true,
               title: "Inventory",
@@ -111,9 +153,9 @@
               statusIcon: "calendar",
               statusColor: "red",
               statusLabel: "",
-              sparkType: "bar"
+              sparkType: "bar",
+              sparkData: [112,57,53,122,128,120]
             },
-
             { configName: "Win/Loss",
               configReset: true,
               title: "Win/Loss",
@@ -122,19 +164,9 @@
               statusIcon: "circle",
               statusColor: "green",
               statusLabel: "Win",
-              sparkType: "winLoss"
-            },
-
-            { configName: "Show months",
-              displayMode: this.demoProps.displayMode.inputChoices[1],
-              preventRangeSelection: false,
-              blockFutureDates: false,
-              blockPastDates: false,
-              blockDatesBefore: '',
-              blockDatesAfter: '',
-              hideNextButton: false,
-              hidePreviousButton: false,
-              parentComponent: ["<div style='width:250px'>", "</div>"] }
+              sparkType: "winLoss",
+              sparkData: [5,-4,3,-6,1,3,-4,3]
+            }
           ]
         }
       }
@@ -146,34 +178,83 @@
     demoProps: {
       title: {
         type: String,
-        inputType: 'text'
+        inputType: 'text',
+        defaultValue: "Orders"
       },
       value: {
         type: String,
-        inputType: 'text'
+        inputType: 'text',
+        defaultValue: "30M"
       },
       uom: {
         type: String,
-        inputType: 'text'
+        inputType: 'text',
+        defaultValue: "USD",
+        inputLabel: "Unit of Measure"
       },
       statusIcon: {
         type: String,
         inputType: 'text',
-        inputPlaceholder: 'Font Awesome icon'
-      },
-      statusLabel: {
-        type: String,
-        inputType: 'text'
+        inputPlaceholder: 'Font Awesome icon',
+        defaultValue: "arrow-up"
       },
       statusColor: {
         type: String,
-        inputType: 'text'
+        inputType: 'text',
+        defaultValue: "green"
+      },
+      statusLabel: {
+        type: String,
+        inputType: 'text',
+        defaultValue: "12%"
       },
       sparkType: {
         type: String,
-        inputType: 'text'
+        inputType: 'text',
+        defaultValue: "line",
+        inputDisabled: true
+      },
+      sparkData: {
+        type: Array,
+        defaultValue: [
+          {
+            'x': 1397102460000,
+            'y': 0.56
+          },{
+            'x': 1397139660000,
+            'y': 0.4
+          },{
+            'x': 1397177400000,
+            'y': 0.43
+          },{
+            'x': 1397228040000,
+            'y': 0.33
+          },{
+            'x': 1397248260000,
+            'y': 0.47
+          },{
+            'x': 1397291280000,
+            'y': 0.41
+          },{
+            'x': 1397318100000,
+            'y': 0.26
+          },{
+            'x': 1397342100000,
+            'y': 0.42
+          },{
+            'x': 1397390820000,
+            'y': 0.27
+          },{
+            'x': 1397408100000,
+            'y': 0.38
+          },{
+            'x': 1397458800000,
+            'y': 0.36
+          },{
+            'x': 1397522940000,
+            'y': 0.32
+          }]
       }
     }
-
   });
 </script>
