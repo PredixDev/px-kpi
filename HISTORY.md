@@ -1,3 +1,7 @@
+v0.2.6
+==================
+* remove subcomponent image shields and add dark theming
+
 v0.2.5
 ==================
 * update demo page using px-demo
