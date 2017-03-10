@@ -1,3 +1,7 @@
+v1.0.0
+==================
+* upgrade px-vis-spark dependency to 1.0.0
+
 v0.2.6
 ==================
 * remove subcomponent image shields and add dark theming
