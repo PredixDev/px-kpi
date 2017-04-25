@@ -5,6 +5,7 @@
     "px-kpi.html"
   ],
   "ignore": [
+    "*.enc",
     ".*",
     "npm-debug.log",
     "gulpfile.js",
