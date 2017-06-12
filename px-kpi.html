@@ -6,25 +6,25 @@
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="css/px-kpi-styles.html">
 <link rel="import" href="../px-vis-spark/px-vis-spark.html" />
-<link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
+<link rel="import" href="../px-polymer-font-awesome/px-icon-set.html" />
 
 
 <!--
-The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number value.
 
-##### Associated components
+### Associated components
 <a href="https://www.predix-ui.com/#/components/px-vis-spark/" target="_blank">px-vis-spark</a>
 
-##### Usage
+### Usage
 
     <px-kpi title="Availability" value="100" uom="%" status-icon="circle" status-color="green" sparkData="..."></px-kpi>
 
 ### Styling
 The following custom properties are available for styling:
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--px-kpi-text-color` | Text color for the KPI | `$black`
+Custom property | Description
+----------------|-------------
+`--px-kpi-text-color` | Primary text color for the KPI
+`--px-kpi-secondary-text-color` | Secondary text color for the KPI
 
 @element px-kpi
 @blurb Element for displaying KPIs in a dashboard layout as a tile with one large number value.
@@ -36,15 +36,15 @@ Custom property | Description | Default
   <template>
     <style include="px-kpi-styles"></style>
 
-    <h3 class="caps u-mt0 u-mb">{{title}}</h3>
+    <span class="caps secondary u-mt0 u-mb">{{title}}</span>
     <div class="flex u-mb">
-      <h1 class="alpha float--left u-mv0 u-mr">{{value}}</h1>
+      <span class="alpha float--left u-mv0 u-mr">{{value}}</span>
       <div class="flex flex--col u-pt- u-pb">
         <div class="flex__item">
-          <iron-icon id="statusIcon" icon$="fa:fa-{{statusIcon}}" class="flex__item" style$="color:{{statusColor}};"></iron-icon>
+          <iron-icon id="statusIcon" icon$="px:{{statusIcon}}" class="flex__item" style$="color:{{statusColor}};"></iron-icon>
           <span class="epsilon">{{statusLabel}}</span>
         </div>
-        <span class="flex--bottom epsilon">{{uom}}</span>
+        <span class="flex--bottom secondary epsilon">{{uom}}</span>
       </div>
     </div>
     <template is="dom-if" if="{{sparkData}}">
@@ -96,7 +96,7 @@ Custom property | Description | Default
         type: String
       },
       /**
-       * Icon to display for the status. See <a href="http://fontawesome.io/cheatsheet/" target="_blank">Font Awesome documentation</a> for valid names.
+       * Icon to display for the status. See Predix UI iconography documentation for valid names.
        *
        * @property statusIcon
        * @type String

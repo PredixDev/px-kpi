@@ -1,6 +1,5 @@
 <!-- Common imports -->
 <link rel="import" href="../../polymer/polymer.html" />
-<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
 
 <!-- Common demo imports -->
 <link rel="import" href="../../px-demo/px-demo-header.html" />
@@ -155,21 +154,21 @@
               configReset: true,
               title: "Inventory",
               value: "10.4",
-              uom: "days",
-              statusIcon: "calendar",
-              statusColor: "red",
-              statusLabel: "",
+              uom: "TARGET",
+              statusIcon: "add",
+              statusColor: "green",
+              statusLabel: "1.12",
               sparkType: "bar",
               sparkData: [112,57,53,122,128,120]
             },
             { configName: "Win/Loss",
               configReset: true,
-              title: "Win/Loss",
-              value: "+10%",
-              uom: "",
-              statusIcon: "circle",
+              title: "Uptime",
+              value: "16.5",
+              uom: "HOURS",
+              statusIcon: "confirm",
               statusColor: "green",
-              statusLabel: "Win",
+              statusLabel: "RUNNING",
               sparkType: "winLoss",
               sparkData: [5,-4,3,-6,1,3,-4,3]
             }
@@ -182,6 +181,12 @@
      * A reference for `this.props`. Read the documentation there.
      */
     demoProps: {
+      sparkType: {
+        type: String,
+        inputType: 'text',
+        defaultValue: "line",
+        inputDisabled: true
+      },
       title: {
         type: String,
         inputType: 'text',
@@ -213,12 +218,6 @@
         type: String,
         inputType: 'text',
         defaultValue: "12%"
-      },
-      sparkType: {
-        type: String,
-        inputType: 'text',
-        defaultValue: "line",
-        inputDisabled: true
       },
       sparkData: {
         type: Array,

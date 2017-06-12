@@ -5,24 +5,24 @@
 -->
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="css/px-kpi-styles.html">
-<link rel="import" href="../px-polymer-font-awesome/polymer-font-awesome.html" />
+<link rel="import" href="../px-polymer-font-awesome/px-icon-set.html" />
 
 
 <!--
-The px-kpi-list element is for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
 
-##### Usage
+### Usage
 
     <px-kpi-list title="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 
 ### Styling
 The following custom properties are available for styling:
 
-Custom property | Description | Default
-----------------|-------------|----------
-`--px-kpi-text-color` | Text color | `$black`
-`--px-kpi-secondary-text-color` | Secondary/muted text color | `$gray6`
-`--px-kpi-border-color` | Border color | `$gray5`
+Custom property | Description
+----------------|-------------
+`--px-kpi-text-color` | Primary text color
+`--px-kpi-secondary-text-color` | Secondary/muted text color
+`--px-kpi-border-color` | Color of the top/bottom borders of the KPI list
+`--px-kpi-separator-color` | Color of the interior borders of the KPI list
 
 @element px-kpi-list
 @blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
@@ -37,16 +37,16 @@ Custom property | Description | Default
 
     <div class="flex flex--row flex--middle u-mv--">
       <div class="flex flex--left flex__item">
-        <h3 class="caps u-mv0">{{title}}</h3>
+        <span class="caps secondary u-mv0">{{title}}</span>
       </div>
       <div class="flex flex--right flex__item">
-        <iron-icon id="statusIcon" icon$="fa:fa-{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></iron-icon>
+        <iron-icon id="statusIcon" icon$="px:{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></iron-icon>
         <span class="epsilon u-mt--">{{statusLabel}}</span>
       </div>
     </div>
     <ul id="kpiList" class="list-ui u-mb--">
       <template is="dom-repeat" items="{{values}}">
-        <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv--">
+        <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv-">
           <div class="flex flex--left flex__item">
             <span id="listLabel">{{item.label}}</span>
           </div>
@@ -96,7 +96,7 @@ Custom property | Description | Default
         type: String
       },
       /**
-       * Icon to display for the status. See Font Awesome documentation for valid names.
+       * Icon to display for the status. See Predix UI iconography documentation for valid names.
        *
        * @property statusIcon
        * @type String

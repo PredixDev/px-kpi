@@ -1,6 +1,6 @@
 {
   "name": "px-kpi",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": [
     "px-kpi.html"
   ],
@@ -16,14 +16,14 @@
   ],
   "dependencies": {
     "polymer": "^1.6.1",
-    "px-theme": "^2.0.1",
-    "px-headings-design": "^0.3.0",
-    "px-list-ui-design": "^1.1.0",
-    "px-vis-spark": "^1.0.0",
-    "px-polymer-font-awesome": "^1.1.0"
+    "px-vis-spark": "^2.0.0",
+    "px-polymer-font-awesome": "^2.0.0"
   },
   "devDependencies": {
-    "px-starter-kit-design": "^0.7.0",
-    "px-demo": "^1.4.5"
+    "px-theme": "^3.0.0",
+    "px-starter-kit-design": "^1.0.0",
+    "px-demo": "^2.0.0",
+    "px-headings-design": "^1.0.0",
+    "px-list-ui-design": "^2.0.0"
   }
 }

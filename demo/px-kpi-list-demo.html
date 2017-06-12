@@ -1,6 +1,5 @@
 <!-- Common imports -->
 <link rel="import" href="../../polymer/polymer.html" />
-<link rel="import" href="../../px-polymer-font-awesome/px-polymer-font-awesome.html" />
 
 <!-- Common demo imports -->
 <link rel="import" href="../../px-demo/px-demo-header.html" />
@@ -10,6 +9,7 @@
 <link rel="import" href="../../px-demo/px-demo-props.html" />
 <link rel="import" href="../../px-demo/px-demo-interactive.html" />
 <link rel="import" href="../../px-demo/px-demo-component-snippet.html" />
+<link rel="import" href="../../px-demo/px-demo-code-editor.html" />
 
 <!-- Imports for this component -->
 <link rel="import" href="../../px-demo/css/px-demo-styles.html" />
@@ -18,7 +18,7 @@
 <!-- Demo DOM module -->
 <dom-module id="px-kpi-list-demo">
   <template>
-    <style include="px-demo-styles" is="custom-style"></style> 
+    <style include="px-demo-styles" is="custom-style"></style>
 
     <!-- Header -->
     <px-demo-header
@@ -34,6 +34,9 @@
 
       <!-- Props -->
       <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+
+      <!-- Code Editor -->
+      <px-demo-code-editor props="{{props}}" config="[[chosenConfig]]"></px-demo-code-editor>
 
       <!-- Component ---------------------------------------------------------->
       <px-demo-component class="flex__item flex__item--msfix">
@@ -141,7 +144,8 @@
             'label': 'MTBT',
             'value': '97',
             'uom': 'days'
-          }]
+          }],
+        inputType: 'code:JSON'
       },
       statusIcon: {
         type: String,

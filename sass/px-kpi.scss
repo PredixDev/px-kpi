@@ -8,18 +8,7 @@
  * under which the software has been supplied.
  */
 
-//
-// Sass for the "sketch" notion of the px-kpi component
-//
-// @author
-//
-
-/*
-THIS FILE SHOULD CONTAIN ONLY ABSTRACT/'SKETCH' THEME RULES, NOT SPECIFIC TO PREDIX BRANDING
-Predix branding rules go in px-kpi-predix.scss, not in this file.
-*/
-
-
+// Settings
 
 // Generic
 @import "px-normalize-design/_generic.normalize.scss";
@@ -31,30 +20,33 @@ Predix branding rules go in px-kpi-predix.scss, not in this file.
 @import "px-viewport-design/_base.viewport.scss";
 @import "px-headings-design/_base.headings.scss";
 
-
-
-
-
-
 // Component
 @import "px-list-ui-design/_objects.list-ui.scss";
 
-#statusIcon {
-  width: 1.33333rem;
-  height: 1.33333rem;
+:host {
+  color: var(--px-kpi-text-color, black);
 }
-h1 {
-  font-weight: normal;
+#listLabel, #listFooter, .secondary {
+  color: var(--px-kpi-secondary-text-color, gray);
 }
 #kpiList {
   border-top: none;
 }
+#kpiList li {
+  border-color: var(--px-kpi-separator-color, gray);
+}
+#kpiList li:first-child {
+  border-top-color: var(--px-kpi-border-color, gray);
+}
+#kpiList li:nth-last-child(2) {
+  border-bottom-color: var(--px-kpi-border-color, gray);
+}
+#statusIcon {
+  width: 1.33333rem;
+  height: 1.33333rem;
+}
 
 // Trumps
-// $inuit-enable-responsive-margins: true;
-// $inuit-enable-responsive-margins--none: true;
-// @import "px-spacing-responsive-design/_trumps.spacing-responsive.scss";
-// @import "px-widths-responsive-design/_trumps.widths-responsive.scss";
 $inuit-enable-margins: true;
 $inuit-enable-margins--none: true;
 $inuit-enable-margins--tiny: true;
