@@ -15,7 +15,7 @@
     "test"
   ],
   "dependencies": {
-    "polymer": "^1.6.1",
+    "polymer": "^1.9.0",
     "px-vis-spark": "^2.0.0",
     "px-polymer-font-awesome": "^2.0.0"
   },
