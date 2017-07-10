@@ -7,7 +7,6 @@ function runCustomTests() {
       assert.isTrue(kpi !== undefined);
     });
     test('KPI title is displayed', function() {
-      debugger;
       var kpi = document.querySelector('px-kpi'),
           title = Polymer.dom(kpi.root).querySelector('span').textContent;
 
