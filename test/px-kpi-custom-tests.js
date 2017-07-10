@@ -7,8 +7,10 @@ function runCustomTests() {
       assert.isTrue(kpi !== undefined);
     });
     test('KPI title is displayed', function() {
+      debugger;
       var kpi = document.querySelector('px-kpi'),
-          title = kpi.querySelector('h3').textContent;
+          title = Polymer.dom(kpi.root).querySelector('span').textContent;
+
       assert.equal(title, 'Test');
     });
     test('Status icon is displayed correctly', function() {
