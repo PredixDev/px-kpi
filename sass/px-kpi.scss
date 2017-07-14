@@ -25,6 +25,8 @@
 
 :host {
   color: var(--px-kpi-text-color, black);
+  --iron-icon-width: 16px;
+  --iron-icon-height: 16px;
 }
 #listLabel, #listFooter, .secondary {
   color: var(--px-kpi-secondary-text-color, gray);

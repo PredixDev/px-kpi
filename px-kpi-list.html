@@ -5,7 +5,8 @@
 -->
 <link rel="import" href="../polymer/polymer.html"/>
 <link rel="import" href="css/px-kpi-styles.html">
-<link rel="import" href="../px-polymer-font-awesome/px-icon-set.html" />
+<link rel="import" href="../px-icon-set/px-icon-set.html" />
+<link rel="import" href="../px-icon-set/px-icon.html" />
 
 
 <!--
@@ -40,7 +41,7 @@ Custom property | Description
         <span class="caps secondary u-mv0">{{title}}</span>
       </div>
       <div class="flex flex--right flex__item">
-        <iron-icon id="statusIcon" icon$="px:{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></iron-icon>
+        <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
         <span class="epsilon u-mt--">{{statusLabel}}</span>
       </div>
     </div>
