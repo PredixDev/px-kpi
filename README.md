@@ -1,10 +1,8 @@
-px-kpi [![Build Status](https://travis-ci.org/PredixDev/px-kpi.svg?branch=master)](https://travis-ci.org/PredixDev/px-kpi)
----------------
-
+# px-kpi [![Build Status](https://travis-ci.org/PredixDev/px-kpi.svg?branch=master)](https://travis-ci.org/PredixDev/px-kpi)
 
 ## Overview
 
-The px-kpi element is for displaying KPIs in a dashboard layout as a tile with one large number or value, with an optional spark line/bar, or as a short px-kpi-list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
+Px-kpi is a Predix UI component used for displaying KPIs in a dashboard layout. KPIs may be displayed as a tile with one large number or value, with an optional spark line/bar, or as a short px-kpi-list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
 
 ## Usage
 
