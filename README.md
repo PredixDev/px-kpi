@@ -2,7 +2,7 @@
 
 ## Overview
 
-Px-kpi is a Predix UI component used for displaying KPIs in a dashboard layout. KPIs may be displayed as a tile with one large number or value, with an optional spark line/bar, or as a short px-kpi-list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
+`Px-kpi` is a Predix UI component used for displaying KPIs in a dashboard layout. KPIs may be displayed as a tile with one large number or value, with an optional spark line/bar, or as a short px-kpi-list with multiple numeric values and labels. The list layout is not recommended for more than about 6 items.
 
 ## Usage
 
@@ -16,13 +16,13 @@ Node, npm and bower are necessary to install the component and dependencies. web
 
 ## Getting Started
 
-First, install the component via bower on the command line.
+First, install the component via bower on the command line:
 
 ```
 bower install px-kpi --save
 ```
 
-Second, import the component to your application with the following tag in your head.
+Second, import the component in your application with the following tag in your head:
 
 ```
 <link rel="import" href="/bower_components/px-kpi/px-kpi.html"/>
