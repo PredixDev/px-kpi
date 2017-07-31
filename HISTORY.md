@@ -1,3 +1,7 @@
+v2.0.1
+==================
+* fix icon in kpi-list
+
 v2.0.0
 ==================
 * update dependencies for design refresh
