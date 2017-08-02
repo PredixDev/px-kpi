@@ -44,8 +44,8 @@
   border-bottom-color: var(--px-kpi-border-color, gray);
 }
 #statusIcon {
-  width: 1.33333rem;
-  height: 1.33333rem;
+  --iron-icon-width: 1.33333rem;
+  --iron-icon-height: 1.33333rem;
 }
 
 // Trumps

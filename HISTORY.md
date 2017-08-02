@@ -1,3 +1,7 @@
+v2.0.2
+==================
+* fix icon sizing
+
 v2.0.1
 ==================
 * fix icon in kpi-list
