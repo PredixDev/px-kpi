@@ -1,3 +1,7 @@
+v2.0.3
+==================
+* design review feedback
+
 v2.0.2
 ==================
 * fix icon sizing
