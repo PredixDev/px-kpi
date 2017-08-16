@@ -1,3 +1,7 @@
+v2.0.4
+==================
+* fix for sub-component demos to refer to shared API docs
+
 v2.0.3
 ==================
 * design review feedback
