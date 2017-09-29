@@ -1,3 +1,7 @@
+v2.0.5
+=================
+* update spark dependency
+
 v2.0.4
 ==================
 * fix for sub-component demos to refer to shared API docs
