@@ -31,16 +31,16 @@
     <!-- Interactive -->
     <px-demo-interactive>
       <!-- Configs -->
-      <px-demo-configs configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
+      <px-demo-configs slot="px-demo-configs" configs="[[configs]]" props="{{props}}" chosen-config="{{chosenConfig}}"></px-demo-configs>
 
       <!-- Props -->
-      <px-demo-props props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
+      <px-demo-props slot="px-demo-props" props="{{props}}" config="[[chosenConfig]]"></px-demo-props>
 
       <!-- Code Editor -->
-      <px-demo-code-editor props="{{props}}" config="[[chosenConfig]]"></px-demo-code-editor>
+      <px-demo-code-editor slot="px-demo-code-editor" props="{{props}}" config="[[chosenConfig]]"></px-demo-code-editor>
 
       <!-- Component ---------------------------------------------------------->
-      <px-demo-component class="flex__item flex__item--msfix">
+      <px-demo-component slot="px-demo-component" class="flex__item flex__item--msfix">
         <px-kpi-list
           title="{{props.title.value}}"
           values="{{props.values.value}}"
@@ -53,10 +53,11 @@
       <!-- END Component ------------------------------------------------------>
 
       <px-demo-component-snippet
-          element-properties="{{props}}"
-          element-name="px-kpi-list"
-          links-includes="[[linksIncludes]]"
-          scripts-includes="[[scriptsIncludes]]">>
+        slot="px-demo-component-snippet"
+        element-properties="{{props}}"
+        element-name="px-kpi-list"
+        links-includes="[[linksIncludes]]"
+        scripts-includes="[[scriptsIncludes]]">
       </px-demo-component-snippet>
     </px-demo-interactive>
 
