@@ -2,7 +2,7 @@
     "name": "px-kpi",
     "author": "General Electric",
     "description": "A Predix UI component for displaying KPIs in a dashboard layout.",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "private": false,
     "extName": null,
     "repository": {
