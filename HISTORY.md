@@ -1,3 +1,7 @@
+v2.1.2
+=================
+* fixing demo pages for IE11
+
 v2.1.1
 =================
 * fix link in docs
