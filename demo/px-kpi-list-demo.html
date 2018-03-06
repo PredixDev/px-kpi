@@ -41,7 +41,7 @@
       <!-- Component ---------------------------------------------------------->
       <px-demo-component slot="px-demo-component" class="flex__item flex__item--msfix">
         <px-kpi-list
-          title="{{props.title.value}}"
+          key="{{props.key.value}}"
           values="{{props.values.value}}"
           status-icon="{{props.statusIcon.value}}"
           status-color="{{props.statusColor.value}}"
@@ -117,7 +117,7 @@
      * A reference for `this.props`. Read the documentation there.
      */
     demoProps: {
-      title: {
+      key: {
         type: String,
         defaultValue: "Asset GE1892",
         inputType: 'text'

@@ -2,14 +2,14 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "### Associated components\n[px-vis-spark](https://www.predix-ui.com/#/components/px-vis-spark/)\n\n### Usage\n\n    <px-kpi title=\"Availability\" value=\"100\" uom=\"%\" status-icon=\"px-nav:up\" status-color=\"green\" sparkData=\"...\"></px-kpi>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color for the KPI\n`--px-kpi-secondary-text-color` | Secondary text color for the KPI",
+      "description": "### Associated components\n[px-vis-spark](https://www.predix-ui.com/#/components/px-vis-spark/)\n\n### Usage\n\n    <px-kpi key=\"Availability\" value=\"100\" uom=\"%\" status-icon=\"px-nav:up\" status-color=\"green\" sparkData=\"...\"></px-kpi>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color for the KPI\n`--px-kpi-secondary-text-color` | Secondary text color for the KPI",
       "summary": "",
       "path": "px-kpi.html",
       "properties": [
         {
-          "name": "title",
+          "name": "key",
           "type": "string",
-          "description": "Title of KPI.",
+          "description": "Title or label for the KPI.",
           "privacy": "public",
           "sourceRange": {
             "start": {
@@ -182,8 +182,8 @@
       "superclass": "HTMLElement",
       "attributes": [
         {
-          "name": "title",
-          "description": "Title of KPI.",
+          "name": "key",
+          "description": "Title or label for the KPI.",
           "sourceRange": {
             "start": {
               "line": 68,
@@ -319,14 +319,14 @@
       "tagname": "px-kpi"
     },
     {
-      "description": "### Usage\n\n    <px-kpi-list title=\"Asset 123456\" values='[{\"label\":\"Availability\",\"value\":\"99\",\"uom\":\"%\"},...]' status-icon=\"px-nav:up\" status-color=\"green\" footer=\"Last 7 Days\"></px-kpi-list>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color\n`--px-kpi-secondary-text-color` | Secondary/muted text color\n`--px-kpi-border-color` | Color of the top/bottom borders of the KPI list\n`--px-kpi-separator-color` | Color of the interior borders of the KPI list",
+      "description": "### Usage\n\n    <px-kpi-list key=\"Asset 123456\" values='[{\"label\":\"Availability\",\"value\":\"99\",\"uom\":\"%\"},...]' status-icon=\"px-nav:up\" status-color=\"green\" footer=\"Last 7 Days\"></px-kpi-list>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color\n`--px-kpi-secondary-text-color` | Secondary/muted text color\n`--px-kpi-border-color` | Color of the top/bottom borders of the KPI list\n`--px-kpi-separator-color` | Color of the interior borders of the KPI list",
       "summary": "",
       "path": "px-kpi-list.html",
       "properties": [
         {
-          "name": "title",
+          "name": "key",
           "type": "string",
-          "description": "Title of KPI.",
+          "description": "Title or label for the KPI.",
           "privacy": "public",
           "sourceRange": {
             "start": {
@@ -461,8 +461,8 @@
       "superclass": "HTMLElement",
       "attributes": [
         {
-          "name": "title",
-          "description": "Title of KPI.",
+          "name": "key",
+          "description": "Title or label for the KPI.",
           "sourceRange": {
             "start": {
               "line": 76,

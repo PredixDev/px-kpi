@@ -17,7 +17,7 @@
 
 ### Usage
 
-    <px-kpi title="Availability" value="100" uom="%" status-icon="px-nav:up" status-color="green" sparkData="..."></px-kpi>
+    <px-kpi key="Availability" value="100" uom="%" status-icon="px-nav:up" status-color="green" sparkData="..."></px-kpi>
 
 ### Styling
 The following custom properties are available for styling:
@@ -37,7 +37,7 @@ Custom property | Description
   <template>
     <style include="px-kpi-styles"></style>
 
-    <span class="caps secondary epsilon u-mt0 u-mb">{{title}}</span>
+    <span class="caps secondary epsilon u-mt0 u-mb">{{key}}</span>
     <div class="flex u-mb u--mt-">
       <span class="alpha float--left u-mv0 u-mr">{{value}}</span>
       <div class="flex flex--col u-pt u-pb-">
@@ -61,12 +61,12 @@ Custom property | Description
 
     properties: {
       /**
-       * Title of KPI.
+       * Title or label for the KPI.
        *
-       * @property title
+       * @property key
        * @type String
        */
-      title: {
+      key: {
         type: String
       },
       /**

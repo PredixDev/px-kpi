@@ -36,7 +36,7 @@
       <!-- Component ---------------------------------------------------------->
       <px-demo-component slot="px-demo-component">
         <px-kpi
-          title="{{props.title.value}}"
+          key="{{props.key.value}}"
           value="{{props.value.value}}"
           uom="{{props.uom.value}}"
           status-icon="{{props.statusIcon.value}}"
@@ -153,7 +153,7 @@
             },
             { configName: "Bar",
               configReset: true,
-              title: "Inventory",
+              key: "Inventory",
               value: "10.4",
               uom: "TARGET",
               statusIcon: "px-utl:add",
@@ -164,7 +164,7 @@
             },
             { configName: "Win/Loss",
               configReset: true,
-              title: "Uptime",
+              key: "Uptime",
               value: "16.5",
               uom: "HOURS",
               statusIcon: "px-utl:confirmed",
@@ -188,7 +188,7 @@
         defaultValue: "line",
         inputDisabled: true
       },
-      title: {
+      key: {
         type: String,
         inputType: 'text',
         defaultValue: "Orders"

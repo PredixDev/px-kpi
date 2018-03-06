@@ -13,7 +13,7 @@
 
 ### Usage
 
-    <px-kpi-list title="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="px-nav:up" status-color="green" footer="Last 7 Days"></px-kpi-list>
+    <px-kpi-list key="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="px-nav:up" status-color="green" footer="Last 7 Days"></px-kpi-list>
 
 ### Styling
 The following custom properties are available for styling:
@@ -38,7 +38,7 @@ Custom property | Description
 
     <div class="flex flex--row flex--middle u-mv--">
       <div class="flex flex--left flex__item">
-        <span class="caps epsilon secondary u-mv0">{{title}}</span>
+        <span class="caps epsilon secondary u-mv0">{{key}}</span>
       </div>
       <div class="flex flex--right flex__item">
         <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
@@ -69,12 +69,12 @@ Custom property | Description
 
     properties: {
       /**
-       * Title of KPI.
+       * Title or label for the KPI.
        *
-       * @property title
+       * @property key
        * @type String
        */
-      title: {
+      key: {
         type: String
       },
       /**

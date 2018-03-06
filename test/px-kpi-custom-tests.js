@@ -10,9 +10,9 @@ suite('Testing of the main kpi component', done => {
   test('KPI is created', function() {
     assert.isTrue(kpi !== undefined);
   });
-  test('KPI title is displayed', function() {
-    let title = Polymer.dom(kpi.root).querySelector('span').textContent;
-    assert.equal(title, 'Test');
+  test('KPI key is displayed', function() {
+    let key = Polymer.dom(kpi.root).querySelector('span').textContent;
+    assert.equal(key, 'Test');
   });
   test('Status icon is displayed correctly', function() {
     let icon = Polymer.dom(kpi.root).querySelector('#statusIcon');

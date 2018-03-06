@@ -1,3 +1,7 @@
+v3.0.0
+=================
+* `title` replaced by `key` to avoid browser tooltips (#8)
+
 v2.1.2
 =================
 * fixing demo pages for IE11
