@@ -1,3 +1,7 @@
+v3.0.1
+=================
+* fix typo in docs
+
 v3.0.0
 =================
 * `title` replaced by `key` to avoid browser tooltips (#8)

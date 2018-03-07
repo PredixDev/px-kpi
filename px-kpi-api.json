@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "elements": [
     {
-      "description": "### Associated components\n[px-vis-spark](https://www.predix-ui.com/#/components/px-vis-spark/)\n\n### Usage\n\n    <px-kpi key=\"Availability\" value=\"100\" uom=\"%\" status-icon=\"px-nav:up\" status-color=\"green\" sparkData=\"...\"></px-kpi>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color for the KPI\n`--px-kpi-secondary-text-color` | Secondary text color for the KPI",
+      "description": "### Associated components\n[px-vis-spark](https://www.predix-ui.com/#/components/px-vis-spark/)\n\n### Usage\n\n    <px-kpi key=\"Availability\" value=\"100\" uom=\"%\" status-icon=\"px-nav:up\" status-color=\"green\" spark-data=\"...\"></px-kpi>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color for the KPI\n`--px-kpi-secondary-text-color` | Secondary text color for the KPI",
       "summary": "",
       "path": "px-kpi.html",
       "properties": [
