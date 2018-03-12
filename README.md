@@ -33,9 +33,9 @@ Second, import the component in your application with the following tag in your 
 Finally, use the component in your application:
 
 ```
-<px-kpi key="Availability" value="100" uom="%" status-icon="circle" status-color="green" spark-type="line" spark-data="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
+<px-kpi label="Availability" value="100" uom="%" status-icon="circle" status-color="green" spark-type="line" spark-data="[{"x":1397102460000,"y":0.5},...]"></px-kpi>
 // and/or:
-<px-kpi-list key="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
+<px-kpi-list label="Asset 123456" values=[{"label":"Availability","value":"99","uom":"%"},...] status-icon="circle" status-color="green" footer="Last 7 Days"></px-kpi-list>
 ```
 
 <br />
