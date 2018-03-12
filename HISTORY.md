@@ -1,3 +1,7 @@
+v4.0.0
+=================
+* `key` replaced by `label` to enable component to work in React
+
 v3.0.1
 =================
 * fix typo in docs

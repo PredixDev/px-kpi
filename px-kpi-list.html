@@ -13,7 +13,7 @@
 
 ### Usage
 
-    <px-kpi-list key="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="px-nav:up" status-color="green" footer="Last 7 Days"></px-kpi-list>
+    <px-kpi-list label="Asset 123456" values='[{"label":"Availability","value":"99","uom":"%"},...]' status-icon="px-nav:up" status-color="green" footer="Last 7 Days"></px-kpi-list>
 
 ### Styling
 The following custom properties are available for styling:
@@ -38,7 +38,7 @@ Custom property | Description
 
     <div class="flex flex--row flex--middle u-mv--">
       <div class="flex flex--left flex__item">
-        <span class="caps epsilon secondary u-mv0">{{key}}</span>
+        <span class="caps epsilon secondary u-mv0">{{label}}</span>
       </div>
       <div class="flex flex--right flex__item">
         <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
@@ -71,14 +71,14 @@ Custom property | Description
       /**
        * Title or label for the KPI.
        *
-       * @property key
+       * @property label
        * @type String
        */
-      key: {
+      label: {
         type: String
       },
       /**
-       * A JSON array with one or more value objects. Each object should have a key-value pair for the KPI label, value, and unit of measure.
+       * A JSON array with one or more value objects. Each object should have a label-value pair for the KPI label, value, and unit of measure.
        * E.g. [{"label":"Availability","value":"99","uom":"%"},...]
        *
        * @property values
