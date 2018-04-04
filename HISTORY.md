@@ -1,3 +1,7 @@
+v5.0.0
+=================
+* Upgrade to v4 of px-vis-spark
+
 v4.0.0
 =================
 * `key` replaced by `label` to enable component to work in React
