@@ -13,11 +13,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 68,
+              "line": 84,
               "column": 6
             },
             "end": {
-              "line": 70,
+              "line": 86,
               "column": 7
             }
           },
@@ -32,11 +32,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 77,
+              "line": 93,
               "column": 6
             },
             "end": {
-              "line": 79,
+              "line": 95,
               "column": 7
             }
           },
@@ -51,11 +51,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 102,
               "column": 6
             },
             "end": {
-              "line": 88,
+              "line": 104,
               "column": 7
             }
           },
@@ -70,11 +70,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 95,
+              "line": 111,
               "column": 6
             },
             "end": {
-              "line": 97,
+              "line": 113,
               "column": 7
             }
           },
@@ -89,11 +89,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 120,
               "column": 6
             },
             "end": {
-              "line": 106,
+              "line": 122,
               "column": 7
             }
           },
@@ -108,11 +108,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 129,
               "column": 6
             },
             "end": {
-              "line": 115,
+              "line": 131,
               "column": 7
             }
           },
@@ -127,11 +127,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 138,
               "column": 6
             },
             "end": {
-              "line": 124,
+              "line": 140,
               "column": 7
             }
           },
@@ -146,11 +146,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 131,
+              "line": 147,
               "column": 6
             },
             "end": {
-              "line": 133,
+              "line": 149,
               "column": 7
             }
           },
@@ -170,11 +170,11 @@
       "metadata": {},
       "sourceRange": {
         "start": {
-          "line": 57,
+          "line": 73,
           "column": 10
         },
         "end": {
-          "line": 136,
+          "line": 152,
           "column": 3
         }
       },
@@ -186,11 +186,11 @@
           "description": "Title or label for the KPI.",
           "sourceRange": {
             "start": {
-              "line": 68,
+              "line": 84,
               "column": 6
             },
             "end": {
-              "line": 70,
+              "line": 86,
               "column": 7
             }
           },
@@ -202,11 +202,11 @@
           "description": "Value of KPI.",
           "sourceRange": {
             "start": {
-              "line": 77,
+              "line": 93,
               "column": 6
             },
             "end": {
-              "line": 79,
+              "line": 95,
               "column": 7
             }
           },
@@ -218,11 +218,11 @@
           "description": "Unit of Measure for KPI (e.g. %, USD, etc).",
           "sourceRange": {
             "start": {
-              "line": 86,
+              "line": 102,
               "column": 6
             },
             "end": {
-              "line": 88,
+              "line": 104,
               "column": 7
             }
           },
@@ -234,11 +234,11 @@
           "description": "Color to display the status icon.",
           "sourceRange": {
             "start": {
-              "line": 95,
+              "line": 111,
               "column": 6
             },
             "end": {
-              "line": 97,
+              "line": 113,
               "column": 7
             }
           },
@@ -250,11 +250,11 @@
           "description": "Icon to display for the status. See Predix UI iconography documentation for valid names.",
           "sourceRange": {
             "start": {
-              "line": 104,
+              "line": 120,
               "column": 6
             },
             "end": {
-              "line": 106,
+              "line": 122,
               "column": 7
             }
           },
@@ -266,11 +266,11 @@
           "description": "Supporting text to display next to the status icon (e.g. if the icon is an arrow, \"12%\" to indicate an increase).",
           "sourceRange": {
             "start": {
-              "line": 113,
+              "line": 129,
               "column": 6
             },
             "end": {
-              "line": 115,
+              "line": 131,
               "column": 7
             }
           },
@@ -282,11 +282,11 @@
           "description": "The chart type to display below the KPI. One of \"line\", \"bar, \"winLoss\". Spark type is dependent on your data structure; see px-vis-spark for more information.",
           "sourceRange": {
             "start": {
-              "line": 122,
+              "line": 138,
               "column": 6
             },
             "end": {
-              "line": 124,
+              "line": 140,
               "column": 7
             }
           },
@@ -298,11 +298,11 @@
           "description": "The data to populate your chart. See px-vis and px-vis-spark for more information.",
           "sourceRange": {
             "start": {
-              "line": 131,
+              "line": 147,
               "column": 6
             },
             "end": {
-              "line": 133,
+              "line": 149,
               "column": 7
             }
           },
@@ -317,253 +317,6 @@
       },
       "slots": [],
       "tagname": "px-kpi"
-    },
-    {
-      "description": "### Usage\n\n    <px-kpi-list label=\"Asset 123456\" values='[{\"label\":\"Availability\",\"value\":\"99\",\"uom\":\"%\"},...]' status-icon=\"px-nav:up\" status-color=\"green\" footer=\"Last 7 Days\"></px-kpi-list>\n\n### Styling\nThe following custom properties are available for styling:\n\nCustom property | Description\n----------------|-------------\n`--px-kpi-text-color` | Primary text color\n`--px-kpi-secondary-text-color` | Secondary/muted text color\n`--px-kpi-border-color` | Color of the top/bottom borders of the KPI list\n`--px-kpi-separator-color` | Color of the interior borders of the KPI list",
-      "summary": "",
-      "path": "px-kpi-list.html",
-      "properties": [
-        {
-          "name": "label",
-          "type": "string",
-          "description": "Title or label for the KPI.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 76,
-              "column": 6
-            },
-            "end": {
-              "line": 78,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "values",
-          "type": "Array",
-          "description": "A JSON array with one or more value objects. Each object should have a label-value pair for the KPI label, value, and unit of measure.\nE.g. [{\"label\":\"Availability\",\"value\":\"99\",\"uom\":\"%\"},...]",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 86,
-              "column": 6
-            },
-            "end": {
-              "line": 88,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "statusColor",
-          "type": "string",
-          "description": "Color to display the status icon.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 95,
-              "column": 6
-            },
-            "end": {
-              "line": 97,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "statusIcon",
-          "type": "string",
-          "description": "Icon to display for the status. See Predix UI iconography documentation for valid names.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 104,
-              "column": 6
-            },
-            "end": {
-              "line": 106,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "statusLabel",
-          "type": "string",
-          "description": "Supporting text to display next to the status icon (e.g. if the icon is an arrow, \"12%\" to indicate an increase).",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 113,
-              "column": 6
-            },
-            "end": {
-              "line": 115,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        },
-        {
-          "name": "footer",
-          "type": "string",
-          "description": "The footer string to display below the KPI list.",
-          "privacy": "public",
-          "sourceRange": {
-            "start": {
-              "line": 122,
-              "column": 6
-            },
-            "end": {
-              "line": 124,
-              "column": 7
-            }
-          },
-          "metadata": {
-            "polymer": {}
-          }
-        }
-      ],
-      "methods": [],
-      "staticMethods": [],
-      "demos": [
-        {
-          "url": "demo.html",
-          "description": ""
-        }
-      ],
-      "metadata": {},
-      "sourceRange": {
-        "start": {
-          "line": 65,
-          "column": 10
-        },
-        "end": {
-          "line": 127,
-          "column": 3
-        }
-      },
-      "privacy": "public",
-      "superclass": "HTMLElement",
-      "attributes": [
-        {
-          "name": "label",
-          "description": "Title or label for the KPI.",
-          "sourceRange": {
-            "start": {
-              "line": 76,
-              "column": 6
-            },
-            "end": {
-              "line": 78,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "values",
-          "description": "A JSON array with one or more value objects. Each object should have a label-value pair for the KPI label, value, and unit of measure.\nE.g. [{\"label\":\"Availability\",\"value\":\"99\",\"uom\":\"%\"},...]",
-          "sourceRange": {
-            "start": {
-              "line": 86,
-              "column": 6
-            },
-            "end": {
-              "line": 88,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "Array"
-        },
-        {
-          "name": "status-color",
-          "description": "Color to display the status icon.",
-          "sourceRange": {
-            "start": {
-              "line": 95,
-              "column": 6
-            },
-            "end": {
-              "line": 97,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "status-icon",
-          "description": "Icon to display for the status. See Predix UI iconography documentation for valid names.",
-          "sourceRange": {
-            "start": {
-              "line": 104,
-              "column": 6
-            },
-            "end": {
-              "line": 106,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "status-label",
-          "description": "Supporting text to display next to the status icon (e.g. if the icon is an arrow, \"12%\" to indicate an increase).",
-          "sourceRange": {
-            "start": {
-              "line": 113,
-              "column": 6
-            },
-            "end": {
-              "line": 115,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        },
-        {
-          "name": "footer",
-          "description": "The footer string to display below the KPI list.",
-          "sourceRange": {
-            "start": {
-              "line": 122,
-              "column": 6
-            },
-            "end": {
-              "line": 124,
-              "column": 7
-            }
-          },
-          "metadata": {},
-          "type": "string"
-        }
-      ],
-      "events": [],
-      "styling": {
-        "cssVariables": [],
-        "selectors": []
-      },
-      "slots": [],
-      "tagname": "px-kpi-list"
     }
   ]
 }
