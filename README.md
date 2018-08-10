@@ -1,4 +1,4 @@
-# px-kpi [![Build Status](https://travis-ci.org/predixdesignsystem/px-kpi.svg?branch=master)](https://travis-ci.org/PredixDev/px-kpi)
+# px-kpi [![Build Status](https://travis-ci.org/predixdesignsystem/px-kpi.svg?branch=master)](https://travis-ci.org/predixdesignsystem/px-kpi)
 
 ## Overview
 
