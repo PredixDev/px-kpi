@@ -40,6 +40,8 @@ Custom property | Description
 `--px-kpi-secondary-text-color` | Secondary/muted text color
 `--px-kpi-border-color` | Color of the top/bottom borders of the KPI list
 `--px-kpi-separator-color` | Color of the interior borders of the KPI list
+`--px-kpi-value-text-size` | Font size of the value of the KPI list
+`--px-kpi-uom-text-size` | Font size of the uom of the KPI list
 
 @element px-kpi-list
 @blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
@@ -50,18 +52,17 @@ Custom property | Description
 <dom-module id="px-kpi-list">
   <template>
     <style include="px-kpi-styles"></style>
-
-    <template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
-      <div class="flex flex--row flex--middle u-mv--">
-        <div class="flex flex--left flex__item">
-          <span class="caps epsilon secondary u-mv0">{{label}}</span>
-        </div>
-        <div class="flex flex--right flex__item">
-          <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
-          <span class="epsilon">{{statusLabel}}</span>
-        </div>
-      </div>
-    </template>
+		<template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
+			<div class="flex flex--row flex--middle u-mv--">
+			  <div class="flex flex--left flex__item">
+				<span class="caps epsilon secondary u-mv0">{{label}}</span>
+			  </div>
+			  <div class="flex flex--right flex__item">
+				<px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
+				<span class="epsilon">{{statusLabel}}</span>
+			  </div>
+			</div>
+		</template>
     <ul id="kpiList" class="list-ui u-mb--">
       <template is="dom-repeat" items="{{values}}">
         <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv-">
@@ -69,8 +70,8 @@ Custom property | Description
             <span id="listLabel">{{item.label}}</span>
           </div>
           <div class="flex flex--right flex--bottom flex__item">
-            <span class$="[[size]]">{{item.value}}</span>
-            <span class$="[[uomsize]]">{{item.uom}}</span>
+            <span id="kpiListValue">{{item.value}}</span>
+            <span class="caps u-mb-- u-ml--" id="kpiListUom">{{item.uom}}</span>
           </div>
         </li>
       </template>
@@ -140,36 +141,19 @@ Custom property | Description
       footer: {
         type: String
       },
-	   /**
-      * The display size of the `value` in the KPI list.
-      *
-      * @property size
-      */
-      size: {
-        type: String,
-        value: 'delta'
-      },
-      /**
-      * The display size of the `uom` in the KPI list.
-      *
-      * @property uomsize
-      */
-      uomsize: {
-        type: String,
-        value: 'caps u-mb-- u-ml--'
-      }
-    },
-	    /**
+	 /**
       * This will check if label or statusIcon or statusLabel is present or not
-      * if not then don't show header else show header 
+	  * if not then don't show header else show header 
       *
       * @property size
       */
-    _checkIsHeaderDataPresent() {
-      if (!this.label || !this.statusIcon || !this.statusLabel)
-        return true;
-      else
-        return false;
+	_checkIsHeaderDataPresent() {
+		if(this.label != undefined || this.statusIcon != undefined || this.statusLabel != undefined)
+		return true;
+		else
+		return false;
+	  }
     }
+
   });
 </script>
