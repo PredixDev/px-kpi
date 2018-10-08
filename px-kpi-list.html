@@ -52,17 +52,17 @@ Custom property | Description
 <dom-module id="px-kpi-list">
   <template>
     <style include="px-kpi-styles"></style>
-		<template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
-			<div class="flex flex--row flex--middle u-mv--">
-			  <div class="flex flex--left flex__item">
-				<span class="caps epsilon secondary u-mv0">{{label}}</span>
-			  </div>
-			  <div class="flex flex--right flex__item">
-				<px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
-				<span class="epsilon">{{statusLabel}}</span>
-			  </div>
-			</div>
-		</template>
+     <template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
+       <div class="flex flex--row flex--middle u-mv--">
+         <div class="flex flex--left flex__item">
+           <span class="caps epsilon secondary u-mv0">{{label}}</span>
+         </div>
+           <div class="flex flex--right flex__item">
+             <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
+               <span class="epsilon">{{statusLabel}}</span>
+           </div>
+       </div>
+     </template>
     <ul id="kpiList" class="list-ui u-mb--">
       <template is="dom-repeat" items="{{values}}">
         <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv-">
@@ -70,8 +70,8 @@ Custom property | Description
             <span id="listLabel">{{item.label}}</span>
           </div>
           <div class="flex flex--right flex--bottom flex__item">
-            <span id="kpiListValue">{{item.value}}</span>
-            <span class="caps u-mb-- u-ml--" id="kpiListUom">{{item.uom}}</span>
+            <span class="kpiListItemValueFontSize">{{item.value}}</span>
+            <span class="kpiListUomValueFontSize caps u-mb-- u-ml--">{{item.uom}}</span>
           </div>
         </li>
       </template>
@@ -140,20 +140,16 @@ Custom property | Description
        */
       footer: {
         type: String
-      },
-	 /**
+      }
+    },
+     /**
       * This will check if label or statusIcon or statusLabel is present or not
-	  * if not then don't show header else show header 
+      * if not then don't show header else show header 
       *
-      * @property size
       */
-	_checkIsHeaderDataPresent() {
-		if(this.label != undefined || this.statusIcon != undefined || this.statusLabel != undefined)
-		return true;
-		else
-		return false;
-	  }
-    }
+      _checkIsHeaderDataPresent: function() {
+        return !!this.label || !!this.statusIcon || !!this.statusLabel;
+      }
 
   });
 </script>

@@ -51,6 +51,12 @@
   --iron-icon-width: 1.33333rem;
   --iron-icon-height: 1.33333rem;
 }
+.kpiListItemValueFontSize {
+  font-size: var(--px-kpi-value-text-size, 2rem);
+}
+.kpiListUomValueFontSize {
+  font-size: var(--px-kpi-uom-text-size,15px);
+}
 
 // Trumps
 $inuit-enable-margins: true;
