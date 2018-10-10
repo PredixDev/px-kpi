@@ -52,17 +52,17 @@ Custom property | Description
 <dom-module id="px-kpi-list">
   <template>
     <style include="px-kpi-styles"></style>
-     <template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
-       <div class="flex flex--row flex--middle u-mv--">
-         <div class="flex flex--left flex__item">
-           <span class="caps epsilon secondary u-mv0">{{label}}</span>
-         </div>
-           <div class="flex flex--right flex__item">
-             <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
-               <span class="epsilon">{{statusLabel}}</span>
-           </div>
-       </div>
-     </template>
+    <template is="dom-if" if="{{_checkIsHeaderDataPresent()}}">
+      <div class="flex flex--row flex--middle u-mv--">
+        <div class="flex flex--left flex__item">
+          <span class="caps epsilon secondary u-mv0">{{label}}</span>
+        </div>
+        <div class="flex flex--right flex__item">
+          <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
+          <span class="epsilon">{{statusLabel}}</span>
+        </div>
+      </div>
+    </template>
     <ul id="kpiList" class="list-ui u-mb--">
       <template is="dom-repeat" items="{{values}}">
         <li class="list-ui__item flex flex--row flex--middle u-ph0 u-pv-">
