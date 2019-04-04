@@ -40,6 +40,9 @@ Custom property | Description
 `--px-kpi-secondary-text-color` | Secondary/muted text color
 `--px-kpi-border-color` | Color of the top/bottom borders of the KPI list
 `--px-kpi-separator-color` | Color of the interior borders of the KPI list
+`--px-kpi-value-text-size` | Size of text for the values in the KPI list
+`--px-kpi-uom-text-size` | Size of text for the unit of measure in the KPI list
+`--px-kpi-uom-text-transform` | Capitalization for the unit of measure in the KPI list
 
 @element px-kpi-list
 @blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
@@ -68,8 +71,8 @@ Custom property | Description
             <span id="listLabel">{{item.label}}</span>
           </div>
           <div class="flex flex--right flex--bottom flex__item">
-            <span class="delta">{{item.value}}</span>
-            <span class="caps u-mb-- u-ml--">{{item.uom}}</span>
+            <span class="delta list-item">{{item.value}}</span>
+            <span class="caps u-mb-- u-ml-- list-item-unit">{{item.uom}}</span>
           </div>
         </li>
       </template>
