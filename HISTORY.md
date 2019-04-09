@@ -1,3 +1,10 @@
+v5.1.0
+=================
+* Added the following CSS variables:
+  * `--px-kpi-value-text-size` - Size of text for the values in the KPI list
+  * `--px-kpi-uom-text-size` - Size of text for the unit of measure in the KPI list
+  * `--px-kpi-uom-text-transform` - Capitalization for the unit of measure in the KPI list
+
 v5.0.0
 =================
 * Upgrade to v4 of px-vis-spark
