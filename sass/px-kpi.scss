@@ -40,6 +40,15 @@
 }
 #kpiList li {
   border-color: var(--px-kpi-separator-color, gray);
+
+  .list-item {
+    font-size: var(--px-kpi-value-text-size, 2rem);
+  }
+
+  .list-item-unit {
+    font-size: var(--px-kpi-uom-text-size, 15px);
+    text-transform: var(--px-kpi-uom-text-transform, uppercase) !important;
+  }
 }
 #kpiList li:first-child {
   border-top-color: var(--px-kpi-border-color, gray);
