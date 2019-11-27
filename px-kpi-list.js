@@ -1,4 +1,4 @@
-<!--
+/*
 Copyright (c) 2018, General Electric
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,20 +12,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
--->
-
-<!--
+*/
+/*
     Relative paths assume component is being run from inside an app or another component, where dependencies are flat
     siblings. When this component is run from its own repo (e.g. tests, examples), we assume the server is started with
     'gulp serve' (or similar server setup) to enable correct finding of bower dependencies for local runs.
--->
-<link rel="import" href="../polymer/polymer.html"/>
-<link rel="import" href="css/px-kpi-styles.html">
-<link rel="import" href="../px-icon-set/px-icon-set.html" />
-<link rel="import" href="../px-icon-set/px-icon.html" />
-
-
-<!--
+*/
+/**
 
 ### Usage
 
@@ -48,10 +41,21 @@ Custom property | Description
 @blurb Element for displaying KPIs in a dashboard layout as a short list with multiple numeric values and labels. Not recommended for more than about 6 items.
 @homepage index.html
 @demo demo.html
--->
+*/
+/*
+  FIXME(polymer-modulizer): the above comments were extracted
+  from HTML and may be out of place here. Review them and
+  then delete this comment!
+*/
+import '@polymer/polymer/polymer-legacy.js';
 
-<dom-module id="px-kpi-list">
-  <template>
+import './css/px-kpi-styles.js';
+import 'px-icon-set/px-icon-set.js';
+import 'px-icon-set/px-icon.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import { html } from '@polymer/polymer/lib/utils/html-tag.js';
+Polymer({
+  _template: html`
     <style include="px-kpi-styles"></style>
 
 
@@ -60,7 +64,7 @@ Custom property | Description
         <span class="caps epsilon secondary u-mv0">{{label}}</span>
       </div>
       <div class="flex flex--right flex__item">
-        <px-icon id="statusIcon" icon$="{{statusIcon}}" class="u-mr--" style$="color:{{statusColor}};"></px-icon>
+        <px-icon id="statusIcon" icon\$="{{statusIcon}}" class="u-mr--" style\$="color:{{statusColor}};"></px-icon>
         <span class="epsilon">{{statusLabel}}</span>
       </div>
     </div>
@@ -78,71 +82,65 @@ Custom property | Description
       </template>
     </ul>
     <span id="listFooter" class="zeta">{{footer}}</span>
-  </template>
-</dom-module>
+`,
 
-<script>
-  Polymer({
+  is: 'px-kpi-list',
 
-    is: 'px-kpi-list',
-
-    properties: {
-      /**
-       * Title or label for the KPI.
-       *
-       * @property label
-       * @type String
-       */
-      label: {
-        type: String
-      },
-      /**
-       * A JSON array with one or more value objects. Each object should have a label-value pair for the KPI label, value, and unit of measure.
-       * E.g. [{"label":"Availability","value":"99","uom":"%"},...]
-       *
-       * @property values
-       * @type Array
-       */
-      values: {
-        type: Array
-      },
-      /**
-       * Color to display the status icon.
-       *
-       * @property statusColor
-       * @type String
-       */
-      statusColor: {
-        type: String
-      },
-      /**
-       * Icon to display for the status. See Predix UI iconography documentation for valid names.
-       *
-       * @property statusIcon
-       * @type String
-       */
-      statusIcon: {
-        type: String
-      },
-      /**
-       * Supporting text to display next to the status icon (e.g. if the icon is an arrow, "12%" to indicate an increase).
-       *
-       * @property statusLabel
-       * @type String
-       */
-      statusLabel: {
-        type: String
-      },
-      /**
-       * The footer string to display below the KPI list.
-       *
-       * @property footer
-       * @type String
-       */
-      footer: {
-        type: String
-      }
+  properties: {
+    /**
+     * Title or label for the KPI.
+     *
+     * @property label
+     * @type String
+     */
+    label: {
+      type: String
+    },
+    /**
+     * A JSON array with one or more value objects. Each object should have a label-value pair for the KPI label, value, and unit of measure.
+     * E.g. [{"label":"Availability","value":"99","uom":"%"},...]
+     *
+     * @property values
+     * @type Array
+     */
+    values: {
+      type: Array
+    },
+    /**
+     * Color to display the status icon.
+     *
+     * @property statusColor
+     * @type String
+     */
+    statusColor: {
+      type: String
+    },
+    /**
+     * Icon to display for the status. See Predix UI iconography documentation for valid names.
+     *
+     * @property statusIcon
+     * @type String
+     */
+    statusIcon: {
+      type: String
+    },
+    /**
+     * Supporting text to display next to the status icon (e.g. if the icon is an arrow, "12%" to indicate an increase).
+     *
+     * @property statusLabel
+     * @type String
+     */
+    statusLabel: {
+      type: String
+    },
+    /**
+     * The footer string to display below the KPI list.
+     *
+     * @property footer
+     * @type String
+     */
+    footer: {
+      type: String
     }
-
-  });
-</script>
+  }
+});
